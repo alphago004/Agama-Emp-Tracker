@@ -12,7 +12,7 @@ import { addProduct, deleteProduct, getCategories, getProducts, User, Item } fro
 interface Product {
     id: string,
     category: string,
-    price: number,
+    number: number,
     quantity: number,
     name: string
 }
@@ -22,7 +22,7 @@ export default function Home() {
     const router = useRouter()
     const [categories, setCategories] = useState([])
     const [product, setProduct] = useState<string>("")
-    const [price, setPrice] = useState<number>(100)
+    const [number, setNumber] = useState<number>(100)
     const [category, setCategory] = useState<string>("select")
     const [products, setProducts] = useState([])
     
@@ -46,16 +46,16 @@ export default function Home() {
     
     const handleSubmit : FormEventHandler<HTMLFormElement> =  (e) => {
         e.preventDefault()
-        addProduct(product, price, category)
+        addProduct(product, number, category)
         setCategory("select")
-        setPrice(100)
+        setNumber(100)
         setProduct("")
 
     }
     
-    const handlePrice = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleNumber = (event: React.ChangeEvent<HTMLInputElement>) => {
           const value = parseInt(event.target.value, 10);
-          setPrice(value);
+          setNumber(value);
     };
     
     
@@ -64,22 +64,22 @@ export default function Home() {
           <SideNav/>
             
             <div className='md:w-[85%] w-full py-4 px-6 min-h-[100vh] bg-[#f4f4f6]'>
-               <Header title="Products"/>
+               <Header title="Employees"/>
 
                  <section className="w-full mb-10">
-                <h3 className="text-lg mb-4">Add Product <span className="text-gray-500 text-sm">(name, price, category)</span></h3>
+                <h3 className="text-lg mb-4">Add a new employee <span className="text-gray-500 text-sm">(name, contact num, category)</span></h3>
                     <form className="w-full" onSubmit={handleSubmit}>
                         <div className="flex items-center justify-between space-x-3 mb-4" >
-                            <input className="border-b-[1px] px-4 py-2 w-1/3 rounded" type="text" placeholder="Product" name="product" id="product"
+                            <input className="border-b-[1px] px-4 py-2 w-1/3 rounded" type="text" placeholder="Employee Name" name="product" id="product"
                                 required value={product}
                                 onChange={e => setProduct(e.target.value)}
                             />
 
                             <input className="border-b-[1px] px-4 py-2 w-1/3 rounded"
-                                type="number" placeholder="Price"
-                                name="price" id="price" required
-                                value={price.toString()}
-                                onChange={handlePrice}
+                                type="number" placeholder="Phone Number"
+                                name="number" id="number" required
+                                value={number.toString()}
+                                onChange={handleNumber}
                             />
 
                             <select name="category" className="border-b-[1px] px-4 py-2 w-1/3"
@@ -96,7 +96,7 @@ export default function Home() {
                         </div>
 
                         {category !== "select" ?
-                            <button className="py-2 px-4 bg-blue-500 text-white rounded">ADD PRODUCT</button> :
+                            <button className="py-2 px-4 bg-blue-500 text-white rounded">ADD Employee</button> :
                             <p className="text-red-400 text-sm">You need to pick a category</p>}
                         
                        
@@ -108,7 +108,7 @@ export default function Home() {
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Price</th>
+                                <th>Pnone Number</th>
                                 <th>Category</th>
                                 <th>Action</th>
                             </tr>
@@ -117,7 +117,7 @@ export default function Home() {
                             {products?.map((product: Product) => (
                                 <tr key={product.id} className="text-sm text-gray-500">
                                 <td>{product.name}</td>
-                                <td>{`₦${product.price.toLocaleString()}`}</td>
+                                <td>{`${product.number}`}</td>
                                 <td>{product.category}</td>
                                     <td>
                                         <MdDeleteForever

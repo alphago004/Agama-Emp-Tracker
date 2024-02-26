@@ -24,7 +24,7 @@ export interface User {
 export interface Product {
     id: string,
     category: string,
-    price: number,
+    number: number,
     quantity: string,
     name: string
 }
@@ -152,10 +152,10 @@ export const deleteCategory =  async (id: string, name:string) => {
 }
 
 
-export const addProduct = async (name: string, price: number, category: string) => {
+export const addProduct = async (name: string, number: number, category: string) => {
 	try {
 		await addDoc(collection(db, "products"), {
-			name, price, category
+			name, number, category
 		})
 		successMessage(`${name} product added! 🎉`)
 	}	

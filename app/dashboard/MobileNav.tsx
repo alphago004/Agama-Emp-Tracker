@@ -13,7 +13,7 @@ export default function MobileNav({setShowModal}: any) {
             <nav className='w-full flex flex-col h-[100vh] p-4 space-y-8'>
                 <div className="w-full flex items-center space-between">
                     <div className="mr-[75px]">
-                        <Link href="/" className='hover:text-white mt-4 mb-8 font-bold text-xl text-gray-300'>InStock</Link>
+                        <Link href="/" className='hover:text-white mt-4 mb-8 font-bold text-xl text-gray-300'>Agama Consulting</Link>
                     </div>
                     <div onClick={() => setShowModal(false)}>
                            <AiFillCloseCircle className="text-3xl cursor-pointer text-white"/>
@@ -33,7 +33,7 @@ export default function MobileNav({setShowModal}: any) {
                 
                   <div className="w-full flex items-center">
                       <MdShoppingCart className="text-[#9AA8BD] hover:text-white mr-2"/>
-                     <Link href="/products" className="text-[#9AA8BD] hover:text-white">Products</Link>
+                     <Link href="/employee" className="text-[#9AA8BD] hover:text-white">Employee</Link>
                 </div>
 
                  <div className="w-full flex items-center">

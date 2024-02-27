@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 import Loading from "../dashboard/Loading"
 import { addProduct, deleteProduct, getCategories, getProducts, User, Item } from "@/utils"
 
-interface Product {
+interface Employee {
     id: string,
     category: string,
     number: number,
@@ -22,7 +22,7 @@ export default function Home() {
     const router = useRouter()
     const [categories, setCategories] = useState([])
     const [product, setProduct] = useState<string>("")
-    const [number, setNumber] = useState<number>(100)
+    const [number, setNumber] = useState<number>(3183557422)
     const [category, setCategory] = useState<string>("select")
     const [products, setProducts] = useState([])
     
@@ -114,7 +114,7 @@ export default function Home() {
                             </tr>
                         </thead>
                         <tbody>
-                            {products?.map((product: Product) => (
+                            {products?.map((product: Employee) => (
                                 <tr key={product.id} className="text-sm text-gray-500">
                                 <td>{product.name}</td>
                                 <td>{`${product.number}`}</td>

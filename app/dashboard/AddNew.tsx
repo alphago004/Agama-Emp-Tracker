@@ -2,7 +2,7 @@ import { AiFillCloseCircle } from "react-icons/ai"
 import { MdDeleteForever } from "react-icons/md"
 import { IoMdAddCircle } from "react-icons/io"
 import React, { FormEventHandler, useState, ChangeEvent } from "react"
-import { addSales, Items, Product, calculateTotalAmount } from "@/utils"
+import { addSales, Items, Employee, calculateTotalAmount } from "@/utils"
 
 interface Props {
     setAddNew: any
@@ -30,8 +30,8 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
         const { name, value } = e.target
         const list = [...products]
         if (value !== "select") {
-            const result = productsArray.filter((item: Product) => item.name ===  value)
-            list[i]["price"] = result[0].price
+            const result = productsArray.filter((item: Employee) => item.name ===  value)
+            list[i]["price"] = result[0].number
             list[i]["amount"] = (Number(list[i].price) * Number(list[i].quantity)).toLocaleString()
         }
         list[i][name]= value
@@ -64,7 +64,7 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
                 <section className="mb-4 flex items-center justify-between">
                     <h3 className="text-lg font-bold text-blue-800">Record Sales</h3>
                     <div className="flex items-center space-x-4">
-                              <h3 className="text-lg font-bold">{`₦${totalAmount.toLocaleString()}`}</h3>
+                              <h3 className="text-lg font-bold">{`$${totalAmount.toLocaleString()}`}</h3>
                            <AiFillCloseCircle className="text-3xl cursor-pointer text-[#D64979]" onClick={()=> setAddNew(false)}/>
                     </div>
                  
@@ -88,7 +88,7 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
                     </div>
 
                     <h3 className="mb-2 font-bold">Items</h3>
-                    {products.map((product, index) => (
+                    {products.map((employee, index) => (
                      <div key={index}>
                         <div className="w-full flex sm:flex-row flex-col md:space-x-4 mb-2">
                         <div className=" w-full sm:mb-0 mb-2 mr-4">
@@ -96,10 +96,10 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
                                 <label htmlFor="name" className="text-sm">Product</label>
                                     <select className="border-[1px] p-2 rounded text-sm mb-2"
                                         name="name" id="name" required
-                                        value={product.name}
+                                        value={employee.name}
                                         onChange={e => handleProductChange(e, index)}>
                                          <option value="select">Select</option>
-                                        {productsArray.map((item: Product) => (
+                                        {productsArray.map((item: Employee) => (
                                             <option value={item.name} key={item.id}>{item.name}</option>
                                             
                                         ))} 
@@ -110,7 +110,7 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
                                 <label htmlFor="quantity" className="text-sm">Quantity</label>
                                     <input type="number" name="quantity" id="quantity"
                                         className="border-[1px] py-2 px-4 rounded text-sm mb-2" required
-                                        value={product.quantity.toString()}
+                                        value={employee.quantity.toString()}
                                         onChange={e => handleQuantityChange(e, index)}
                                     />
                                 </div>
@@ -119,12 +119,12 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
                         <div className=" w-full mb-2">
                             <div className="flex flex-col mb-2">
                                 <p className="text-sm">Price</p>
-                                    <p className="border-[1px] py-2 px-4 rounded text-sm">{Number(product.price).toLocaleString()}</p>
+                                    <p className="border-[1px] py-2 px-4 rounded text-sm">{Number(employee.number)}</p>
                                         
                             </div>
                             <div className="flex flex-col mb-2">
                                 <p className="text-sm">Amount</p>
-                                    <p className="border-[1px] py-2 px-4 rounded text-sm bg-gray-100">{product.amount}</p>
+                                    <p className="border-[1px] py-2 px-4 rounded text-sm bg-gray-100">{employee.amount}</p>
                                         
                                     </div>
                         </div>

@@ -96,13 +96,13 @@ export default function Sales() {
                                 <div>
                             <p className="text-sm">Products</p>
                             <ul className="text-sm text-gray-500">
-                                            {sale.products.map((item, index) => (
-                                                <li key={index}>- {item.name}= {item.quantity} pieces == (₦{item.amount})</li>
+                                            {sale.employee.map((item, index) => (
+                                                <li key={index}>- {item.name}= {item.quantity} pieces == (${item.amount})</li>
                                 ))}
                                     </ul>
                                 </div>
                                 <div>
-                                <h1 className="text-3xl font-bold text-blue-800">₦{sale.totalAmount.toLocaleString()}</h1></div>
+                                <h1 className="text-3xl font-bold text-blue-800">$ {sale.totalAmount.toLocaleString()}</h1></div>
                             </div>
                             
                        

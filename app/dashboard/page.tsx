@@ -52,7 +52,7 @@ export default function Dashboard() {
                         <h2 className='text-center font-bold text-3xl text-[#60A9CD]'>${totalSales.toLocaleString()}</h2>
                     </div>
                     <div className='bg-white md:w-1/3 w-full h-[200px] shadow rounded p-3 hover:shadow-lg md:my-auto my-2'>
-                        <h3 className='text-[#9AA8BD] mb-10'>Products</h3>
+                        <h3 className='text-[#9AA8BD] mb-10'>Employee</h3>
                         <h2 className='text-center font-bold text-3xl text-[#8FCA37]'>{products.length}</h2>
                     </div>
                     <div className='bg-white md:w-1/3 w-full h-[200px] shadow rounded p-3 hover:shadow-lg md:my-auto my-2'>

@@ -21,18 +21,18 @@ export interface User {
     email: string | null,
     uid: string | null
 }
-export interface Product {
+export interface Employee {
     id: string,
     category: string,
     number: number,
     quantity: string,
     name: string
 }
-export interface ProductItem {
+export interface EmployeeItem {
  price: number,
-  amount: string,
-  quantity: string,
-  name: string,
+ amount: string,
+ quantity: string,
+ name: string,
 }
 export interface Sales{
   customerEmail: string,
@@ -43,7 +43,7 @@ export interface Sales{
 	  seconds: number;
 	  nanoseconds: number;
   },
-  products: ProductItem[]
+  employee: EmployeeItem[]
 }
 
 export function calculateTotalAmount(objectsArray: Items[]) {
@@ -154,7 +154,7 @@ export const deleteCategory =  async (id: string, name:string) => {
 
 export const addProduct = async (name: string, number: number, category: string) => {
 	try {
-		await addDoc(collection(db, "products"), {
+		await addDoc(collection(db, "employee"), {
 			name, number, category
 		})
 		successMessage(`${name} product added! 🎉`)
@@ -169,7 +169,7 @@ export const addProduct = async (name: string, number: number, category: string)
 
 export const getProducts = async (setProducts: any) => {
 	try {
-        const unsub = onSnapshot(collection(db, "products"), doc => {
+        const unsub = onSnapshot(collection(db, "employee"), doc => {
             const docs: any = []
             doc.forEach((d: any) => {
               docs.unshift( { ...d.data(), id: d.id })
@@ -184,7 +184,7 @@ export const getProducts = async (setProducts: any) => {
 
 export const deleteProduct =  async (id: string, name:string) => {
 	try {
-		await deleteDoc(doc(db, "products", id));
+		await deleteDoc(doc(db, "employee", id));
 		successMessage(`${name} deleted 🎉`)
 	} catch (err) {
 		errorMessage("Encountered an error ❌")
@@ -193,10 +193,10 @@ export const deleteProduct =  async (id: string, name:string) => {
 
 }
 
-export const addSales = async (customerName: string, customerEmail: string, products: Items[], totalAmount: number, setAddNew: any) => {
+export const addSales = async (customerName: string, customerEmail: string, employee: Items[], totalAmount: number, setAddNew: any) => {
 	try {
 		await addDoc(collection(db, "sales"), {
-			customerName, customerEmail, products, totalAmount, timestamp: serverTimestamp()
+			customerName, customerEmail, employee, totalAmount, timestamp: serverTimestamp()
 		})
 		successMessage("Sales recorded! 🎉")
 		setAddNew(false)

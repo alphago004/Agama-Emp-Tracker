@@ -108,7 +108,7 @@ export default function Home() {
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Pnone Number</th>
+                                <th>Phone Number</th>
                                 <th>Category</th>
                                 <th>Action</th>
                             </tr>

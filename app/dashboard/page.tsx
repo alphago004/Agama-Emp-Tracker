@@ -63,13 +63,13 @@ export default function Dashboard() {
 
                 <div className='w-full min-h-[30vh]'>
                     <div className='flex items-center justify-between mb-6'>
-                        <h3 className='text-xl'>Recent Sales</h3>
+                        <h3 className='text-xl'>Recent Boarded Employees</h3>
                         <button className='px-4 py-2 bg-blue-500 text-white rounded' onClick={openModal} >Add New</button>
                     </div>
                     <div>
                         {sales.map((sale: Sales) => (
                             <div className='w-full bg-white p-3 flex items-center justify-between rounded my-3' key={sale.id}>
-                                <p className='md:text-md text-sm'>Order{" "}
+                                <p className='md:text-md text-sm'>Emp ID{" "}
                                     <span className='text-blue-300'>
                                         #{sale.id}
                                     </span>

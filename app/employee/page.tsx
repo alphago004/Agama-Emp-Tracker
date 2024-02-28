@@ -22,7 +22,7 @@ export default function Home() {
     const router = useRouter()
     const [categories, setCategories] = useState([])
     const [product, setProduct] = useState<string>("")
-    const [number, setNumber] = useState<number>(3183557422)
+    const [number, setNumber] = useState<number>(1111111111)
     const [category, setCategory] = useState<string>("select")
     const [products, setProducts] = useState([])
     

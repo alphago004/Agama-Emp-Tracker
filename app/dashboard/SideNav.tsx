@@ -3,6 +3,7 @@ import { RiDashboardFill } from "react-icons/ri"
 import { BsFillBarChartFill, BsPersonFillLock } from "react-icons/bs"
 import {  MdCategory } from "react-icons/md"
 import { BsFillPeopleFill } from "react-icons/bs";
+import { FaUserCheck } from "react-icons/fa6";
 import { LogOut } from "@/utils";
 import { useRouter } from "next/navigation";
 
@@ -22,8 +23,8 @@ export default function SideNav() {
                 </div>
                
                 <div className="w-full flex items-center">
-                      <BsFillBarChartFill className="text-[#9AA8BD] hover:text-white mr-2"/>
-                     <Link href="/sales" className="text-[#9AA8BD] hover:text-white">Sales</Link>
+                      <FaUserCheck className="text-[#9AA8BD] hover:text-white mr-2"/>
+                     <Link href="/sales" className="text-[#9AA8BD] hover:text-white">Boarded Employee</Link>
                 </div>
                 
                   <div className="w-full flex items-center">

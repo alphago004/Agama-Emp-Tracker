@@ -73,7 +73,7 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
                 <form className="flex flex-col" onSubmit={handleSubmit}>
                     <div className="w-full flex items-center space-x-4 mb-6">
                         <div className="w-1/2 flex flex-col">
-                         <label htmlFor="customerName" className="text-sm">Customer&apos;s Name</label>
+                         <label htmlFor="customerName" className="text-sm">Vendor&apos;s Name</label>
                             <input type="text" className="border-[1px] px-4 py-2 rounded text-sm" name="customerName" 
                             id="customerName" 
                             required 
@@ -81,19 +81,19 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
                             onChange={e => setCustomerName(e.target.value)}/>
                         </div>
                         <div className="w-1/2 flex flex-col">
-                             <label htmlFor="customerEmail" className="text-sm">Customer&apos;s Email</label>
+                             <label htmlFor="customerEmail" className="text-sm">Vendor&apos;s Email</label>
                             <input type="text" className="border-[1px] px-4 py-2 rounded text-sm" name="customerEmail" id="customerEmail"
                             onChange={e => setCustomerEmail(e.target.value)}/>
                         </div>
                     </div>
 
-                    <h3 className="mb-2 font-bold">Items</h3>
+                    <h3 className="mb-2 font-bold">Employee Detail</h3>
                     {products.map((employee, index) => (
                      <div key={index}>
                         <div className="w-full flex sm:flex-row flex-col md:space-x-4 mb-2">
                         <div className=" w-full sm:mb-0 mb-2 mr-4">
                             <div className="flex flex-col">
-                                <label htmlFor="name" className="text-sm">Product</label>
+                                <label htmlFor="name" className="text-sm">Employee Name</label>
                                     <select className="border-[1px] p-2 rounded text-sm mb-2"
                                         name="name" id="name" required
                                         value={employee.name}

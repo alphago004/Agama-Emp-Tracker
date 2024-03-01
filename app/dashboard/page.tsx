@@ -69,7 +69,7 @@ export default function Dashboard() {
                     <div>
                         {sales.map((sale: Sales) => (
                             <div className='w-full bg-white p-3 flex items-center justify-between rounded my-3' key={sale.id}>
-                                <p className='md:text-md text-sm'>Emp ID{" "}
+                                <p className='md:text-md text-sm'>Boarding ID{" "}
                                     <span className='text-blue-300'>
                                         #{sale.id}
                                     </span>

@@ -80,7 +80,7 @@ export default function Sales() {
                     {sales.map((sale: Sales, index: any) => (
                           <div className="w-full my-3 cursor-pointer" key={sale.id} onClick={() => toggleClick(index)}>
                         <div className='w-full bg-white py-3 px-6 flex items-center justify-between rounded  border-b-[1px] border-b-gray-200'>
-                            <p className='md:text-md text-sm'>Employee ID <span className='text-blue-300'>#{sale.id}</span></p>
+                            <p className='md:text-md text-sm'>Boarding ID <span className='text-blue-300'>#{sale.id}</span></p>
                                 <button className='px-4 py-2 bg-[#D64979] text-white text-sm rounded' onClick={() => toggleClick(index)}>{clicked === index ? <BsFillCaretUpFill/> : <BsFillCaretDownFill/> }</button>
                             
                         </div>

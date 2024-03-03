@@ -73,7 +73,7 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
                 <form className="flex flex-col" onSubmit={handleSubmit}>
                     <div className="w-full flex items-center space-x-4 mb-6">
                         <div className="w-1/2 flex flex-col">
-                         <label htmlFor="customerName" className="text-sm">Vendor&apos;s Name</label>
+                         <label htmlFor="customerName" className="text-sm">External Vendor&apos;s Name</label>
                             <input type="text" className="border-[1px] px-4 py-2 rounded text-sm" name="customerName" 
                             id="customerName" 
                             required 
@@ -81,7 +81,7 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
                             onChange={e => setCustomerName(e.target.value)}/>
                         </div>
                         <div className="w-1/2 flex flex-col">
-                             <label htmlFor="customerEmail" className="text-sm">Vendor&apos;s Email</label>
+                             <label htmlFor="customerEmail" className="text-sm">External Vendor&apos;s Email</label>
                             <input type="text" className="border-[1px] px-4 py-2 rounded text-sm" name="customerEmail" id="customerEmail"
                             onChange={e => setCustomerEmail(e.target.value)}/>
                         </div>

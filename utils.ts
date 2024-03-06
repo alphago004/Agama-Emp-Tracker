@@ -50,6 +50,7 @@ export interface Sales{
 
 // to explicitly define the vendor object
 export interface Vendor{
+	[key: string]: any,
     name: string,
     id: string,
     email: string,
@@ -65,6 +66,14 @@ export function calculateTotalAmount(objectsArray: Items[]) {
   }
 
   return totalAmount;
+}
+
+export function totalVendors (objectsArray : Vendor[]) : string[] {
+	const vendorNames : string[] = [];
+	objectsArray.forEach((vendor:Vendor) => {
+		vendorNames.push(vendor.name);
+	});
+	return vendorNames;
 }
 
 export const successMessage = (message:string) => {

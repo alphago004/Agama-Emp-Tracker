@@ -2,7 +2,7 @@ import { AiFillCloseCircle } from "react-icons/ai"
 import { MdDeleteForever } from "react-icons/md"
 import { IoMdAddCircle } from "react-icons/io"
 import React, { FormEventHandler, useState, ChangeEvent } from "react"
-import { addSales, Items, Employee, calculateTotalAmount } from "@/utils"
+import { addSales, Items, Employee, calculateTotalAmount, Vendor } from "@/utils"
 
 interface Props {
     setAddNew: any
@@ -14,12 +14,18 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
     const [customerEmail, setCustomerEmail] = useState<string>("")
     const [totalAmount, setTotalAmount] = useState<number>(0)
     
+
     const [products, setProducts] = useState<Items[]>([{
         name: "", quantity: "1", price: "", amount: ""
     }])
-
     const addProduct = () => setProducts([...products, { name: "", quantity: "1", price: "", amount: "" }])
-    
+
+    const [vendor, setVendor] = useState<Vendor[]> ([{
+        name: "", id: "", email: ""
+    }])
+
+    const addVendor = () => setVendor ([...vendor, {name: "", id: "", email: ""}])
+
     const removeProduct = (index:number) => {
         const list = [...products]
         list.splice(index, 1)
@@ -114,7 +120,7 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
                                         onChange={e => handleQuantityChange(e, index)}
                                     />
                                 </div>
-                                </div> 
+                            </div> 
                                 
                         <div className=" w-full mb-2">
                             <div className="flex flex-col mb-2">
@@ -126,7 +132,9 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
                                 <p className="text-sm">Amount</p>
                                     <p className="border-[1px] py-2 px-4 rounded text-sm bg-gray-100">{employee.amount}</p>
                                         
-                                    </div>
+                            </div>
+
+                            
                         </div>
                                 
                                 {products.length > 1 && (

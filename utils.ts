@@ -5,6 +5,8 @@ import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 import { doc, deleteDoc, onSnapshot, collection, addDoc, query, where, serverTimestamp, orderBy, Timestamp } from "firebase/firestore";
 import db from "./firebase";
 
+
+// define the structure or shape of various data objects that application works with
 export interface Items {
     [key: string]: any,
     name: string,
@@ -44,6 +46,13 @@ export interface Sales{
 	  nanoseconds: number;
   },
   employee: EmployeeItem[]
+}
+
+// to explicitly define the vendor object
+export interface Vendor{
+    name: string,
+    id: string,
+    email: string,
 }
 
 export function calculateTotalAmount(objectsArray: Items[]) {

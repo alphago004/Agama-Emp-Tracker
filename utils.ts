@@ -63,6 +63,13 @@ export interface Companies{
     email: string,
 }
 
+export interface Country{
+	[key: string]: any,
+    name: string,
+    id: string,
+}
+
+
 export function calculateTotalAmount(objectsArray: Items[]) {
   let totalAmount = 0;
 

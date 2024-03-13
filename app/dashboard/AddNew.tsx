@@ -2,7 +2,7 @@ import { AiFillCloseCircle } from "react-icons/ai"
 import { MdDeleteForever } from "react-icons/md"
 import { IoMdAddCircle } from "react-icons/io"
 import React, { FormEventHandler, useState, ChangeEvent } from "react"
-import { addSales, Items, Employee, calculateTotalAmount, Vendor } from "@/utils"
+import { addSales, Items, Employee, calculateTotalAmount } from "@/utils"
 
 interface Props {
     setAddNew: any
@@ -19,12 +19,6 @@ export default function AddNew({ setAddNew, productsArray }: Props) {
         name: "", quantity: "1", price: "", amount: ""
     }])
     const addProduct = () => setProducts([...products, { name: "", quantity: "1", price: "", amount: "" }])
-
-    const [vendor, setVendor] = useState<Vendor[]> ([{
-        name: "", id: "", email: ""
-    }])
-
-    const addVendor = () => setVendor ([...vendor, {name: "", id: "", email: ""}])
 
     const removeProduct = (index:number) => {
         const list = [...products]

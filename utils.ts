@@ -48,14 +48,6 @@ export interface Sales{
   employee: EmployeeItem[]
 }
 
-// to explicitly define the vendor object
-export interface Vendor{
-	[key: string]: any,
-    name: string,
-    id: string,
-    email: string,
-}
-
 
 
 export function calculateTotalAmount(objectsArray: Items[]) {

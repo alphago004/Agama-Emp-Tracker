@@ -50,6 +50,8 @@ export interface Sales{
 
 
 
+
+
 export function calculateTotalAmount(objectsArray: Items[]) {
   let totalAmount = 0;
 
@@ -62,13 +64,13 @@ export function calculateTotalAmount(objectsArray: Items[]) {
   return totalAmount;
 }
 
-export function totalVendors (objectsArray : Vendor[]) : string[] {
+/*export function totalVendors (objectsArray : Vendor[]) : string[] {
 	const vendorNames : string[] = [];
 	objectsArray.forEach((vendor:Vendor) => {
 		vendorNames.push(vendor.name);
 	});
 	return vendorNames;
-}
+} */
 
 export const successMessage = (message:string) => {
 	toast.success(message, {

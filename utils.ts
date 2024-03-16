@@ -48,7 +48,12 @@ export interface Sales{
   employee: EmployeeItem[]
 }
 
+export interface Vendor {
+	id : string,
+	vendorName : string,
+	vendorPhone : number,
 
+}
 
 
 
